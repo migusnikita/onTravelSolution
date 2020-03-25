@@ -1,0 +1,28 @@
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="1" author="migus_nikita@mail.ru">
+        <createTable tableName="T_CITY">
+            <column name="F_ID" type="BIGINT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="F_NAME" type="VARCHAR(255)">
+                <constraints unique="true" nullable="false"/>
+            </column>
+            <column name="F_INFO" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="2" author="migus_nikita@mail.ru">
+        <addAutoIncrement catalogName="travel"
+                          columnDataType="BIGINT"
+                          columnName="F_ID"
+                          incrementBy="1"
+                          schemaName="public"
+                          startWith="1"
+                          tableName="T_CITY"/>
+    </changeSet>
+</databaseChangeLog>
